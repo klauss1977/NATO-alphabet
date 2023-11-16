@@ -32,7 +32,13 @@ keep_going = True
 while keep_going:
     word = input("Enter a word: ").upper()
     if word != 'EXIT':
-        word_list = [nato_dict[letter] for letter in word]
-        print(word_list)
+        try:
+            word_list = [nato_dict[letter] for letter in word]
+
+        except KeyError:
+            print("Sorry, only letters in word please")
+        else:
+            print(word_list)
+
     else:
         keep_going = False
